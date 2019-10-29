@@ -54,6 +54,7 @@
 #include <QtCharts/QBarCategoryAxis>
 #include <QtWidgets/QApplication>
 #include <QtCharts/QValueAxis>
+#include <MyQWidget.h>
 
 ThemeWidget::ThemeWidget(QWidget *parent) :
     QWidget(parent),
@@ -79,7 +80,10 @@ ThemeWidget::ThemeWidget(QWidget *parent) :
     chartView = new QChartView(createPieChart());
     // Funny things happen if the pie slice labels do not fit the screen, so we ignore size policy
     chartView->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
-    m_ui->gridLayout->addWidget(chartView, 1, 1);
+//    m_ui->gridLayout->addWidget(chartView, 1, 1);
+
+
+    m_ui->gridLayout->addWidget(new MyQWidget());
     m_charts << chartView;
 
     //![5]

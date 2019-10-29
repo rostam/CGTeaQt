@@ -27,8 +27,8 @@ public:
 
     Graph generate_with_positions(unsigned int n, unsigned int k, double width, double height) override {
         Graph g = generate(n, k);
-        std::vector<cgtea_geometry::Point> pos1 = position_generators::circle(width, height, 100.0, n);
-        std::vector<cgtea_geometry::Point> pos2 = position_generators::circle(width, height, 200.0, n);
+        std::vector<cgtea_geometry::Point> pos1 = position_generators::circle(width, height, width/4, n);
+        std::vector<cgtea_geometry::Point> pos2 = position_generators::circle(width, height, width/2, n);
         pos1.insert(pos1.end(), pos2.begin(), pos2.end());
         int i = 0;
         for_each_v(g, [&](Ver v) {

@@ -13,7 +13,7 @@
 class GeneratorInterface {
 public:
     virtual Graph generate(unsigned int n, unsigned int k) { return Graph();}
-    virtual Graph generate_with_positions(unsigned int n, unsigned int k,double width, double height) {return Graph();}
+    virtual Graph generate_with_positions(unsigned int n, unsigned int k, const cgtea_geometry::Point& loc, cgtea_geometry::Point size) {return Graph();}
     Graph generate_with_force_directed(unsigned int n, unsigned int k, double width, double height) {
         Graph g = generate(n, k);
         std::vector<cgtea_geometry::Point> pos = compute_force_directed(50,50, width, height, g);

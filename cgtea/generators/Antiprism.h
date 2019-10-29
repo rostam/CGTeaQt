@@ -25,7 +25,7 @@ public:
         return g;
     }
 
-    Graph generate_with_positions(unsigned int n, unsigned int k, double width, double height) override {
+    Graph generate_with_positions(unsigned int n, unsigned int k, const cgtea_geometry::Point& loc, cgtea_geometry::Point size) override {
         Graph g = generate(n, k);
         std::vector<cgtea_geometry::Point> pos1 = position_generators::circle(width, height, 100.0, n);
         std::vector<cgtea_geometry::Point> pos2 = position_generators::circle(width, height, 200.0, n);

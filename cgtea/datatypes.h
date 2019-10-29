@@ -13,8 +13,8 @@
 #include <random>
 #include "boost/graph/simple_point.hpp"
 #include "generators/point.h"
-//#include "Eigen/Dense"
-//#include "Eigen/Eigenvalues"
+#include "Eigen/Dense"
+#include "Eigen/Eigenvalues"
 
 
 

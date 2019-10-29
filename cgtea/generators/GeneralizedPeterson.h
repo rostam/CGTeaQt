@@ -8,8 +8,8 @@
 
 class GeneralizedPeterson : public GeneratorInterface {
 public:
-    GeneralizedPeterson(unsigned int n, unsigned int k) : GeneratorInterface(n, k) {}
-    Graph generate() {
+    explicit GeneralizedPeterson() : GeneratorInterface() {};
+     Graph generate(unsigned int n, unsigned int k) override {
         Graph g;
         int counter = 0;
         for (int i = 0; i < n; i++) {
@@ -22,6 +22,18 @@ public:
         }
         return g;
     }
+
+     Graph generate_with_positions(unsigned int n, unsigned int k, double width, double height) override {
+       return Graph();
+     }
+
+     string name() override {
+        return "Generalized Peterson";
+     }
+
+     string description() override {
+       return "Generalized Peterson";
+     }
 };
 
 #endif //EXACT_COLORING_GENERALIZEDPETERSONGENERATOR_H

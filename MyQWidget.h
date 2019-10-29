@@ -21,7 +21,7 @@ protected:
   void paintEvent(QPaintEvent *event) override {
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing, true);
-    Graph currentGraph = gg.availableGenerators[0]->generate_with_positions(10,2,cgtea_geometry::Point(100,100),cgtea_geometry::Point(200,200));
+    Graph currentGraph = gg.availableGenerators[0]->generate_with_positions(10,2,cgtea_geometry::Point(100,100),cgtea_geometry::Point(260,260));
     //    Graph& currentGraph = ((ThemeWidget*)parentWidget())->currentGraph;
 
     int vertex_size = 20;
@@ -39,10 +39,15 @@ protected:
 
 
     for_each_v_const(currentGraph, [&](Ver v){
+      int color =  boost::get(vertex_color, currentGraph,v);
+      tuple<int,int,int,int> t = gg.distinctColors[color+1];
+      QColor qcolor(get<0>(t), get<1>(t), get<2>(t), get<3>(t));
       cgtea_geometry::Point pos = boost::get(boost::vertex_distance, currentGraph, v);
       QRectF rectangle(pos.x, pos.y, vertex_size, vertex_size);
-      painter.setBrush(Qt::white);
       painter.setPen(Qt::black);
+      painter.setBrush(Qt::white);
+      painter.drawEllipse(rectangle);
+      painter.setBrush(qcolor);
       painter.drawEllipse(rectangle);
       int tmp = boost::get(boost::vertex_index, currentGraph, v);
       painter.drawText(rectangle,Qt::AlignCenter,QString::number(tmp));

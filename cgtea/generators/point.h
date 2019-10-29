@@ -13,4 +13,5 @@ namespace cgtea_geometry {
     };
 }
 
+
 #endif //CGTEA_POINT_H

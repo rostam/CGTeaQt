@@ -20,16 +20,18 @@ public:
 protected:
   void paintEvent(QPaintEvent *event) override {
     QPainter painter(this);
-    Graph currentGraph = gg.availableGenerators[0]->generate_with_positions(10,2,300,300);
+    Graph currentGraph = gg.availableGenerators[0]->generate_with_positions(10,2,100,100);
 //    Graph& currentGraph = ((ThemeWidget*)parentWidget())->currentGraph;
 
     for_each_v_const(currentGraph, [&](Ver v){
-      QRectF rectangle(100.0, 100.0, 50.0, 50.0);
+      cgtea_geometry::Point pos = boost::get(boost::vertex_distance, currentGraph, v);
+      QRectF rectangle(pos.x, pos.y, 30.0, 30.0);
       painter.setBrush(Qt::white);
       painter.setPen(Qt::black);
       painter.setRenderHint(QPainter::Antialiasing, true);
       painter.drawEllipse(rectangle);
-      painter.drawText(rectangle,Qt::AlignCenter,"text");
+      int tmp = boost::get(boost::vertex_index, currentGraph, v);
+      painter.drawText(rectangle,Qt::AlignCenter,QString::number(tmp));
     });
   }
 };

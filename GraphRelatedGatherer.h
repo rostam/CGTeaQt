@@ -18,7 +18,6 @@
 #include "cgtea/generators/Complete.h"
 #include "cgtea/generators/Cycle.h"
 #include "cgtea/generators/GeneralizedPeterson.h"
-#include "cgtea/generators/PositionGenerators.h"
 #include "cgtea/generators/Prism.h"
 #include "cgtea/generators/Regular.h"
 #include "cgtea/generators/Star.h"

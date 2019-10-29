@@ -315,7 +315,7 @@ HEADERS += \
     cgtea/generators/Cycle.h \
     cgtea/generators/GeneralizedPeterson.h \
     cgtea/generators/GeneratorInterface.h \
-    cgtea/generators/PositionGenerators.h \
+    cgtea/generators/PositionGenerator.h \
     cgtea/generators/Prism.h \
     cgtea/generators/Regular.h \
     cgtea/generators/Star.h \

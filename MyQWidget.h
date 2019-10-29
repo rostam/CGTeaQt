@@ -21,7 +21,7 @@ protected:
   void paintEvent(QPaintEvent *event) override {
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing, true);
-    Graph currentGraph = gg.availableGenerators[0]->generate_with_positions(10,2,200,200);
+    Graph currentGraph = gg.availableGenerators[0]->generate_with_positions(10,2,cgtea_geometry::Point(100,100),cgtea_geometry::Point(200,200));
     //    Graph& currentGraph = ((ThemeWidget*)parentWidget())->currentGraph;
 
     int vertex_size = 20;

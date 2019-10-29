@@ -23,7 +23,7 @@ public:
         return g;
     }
 
-     Graph generate_with_positions(unsigned int n, unsigned int k, double width, double height) override {
+     Graph generate_with_positions(unsigned int n, unsigned int k, const cgtea_geometry::Point& loc, cgtea_geometry::Point size) override {
        return Graph();
      }
 

@@ -10,7 +10,7 @@
 class Prism : public GeneratorInterface {
 
 public:
-    explicit Prism() : GeneratorInterface() {};
+    explicit Prism() : GeneratorInterface() {}
 
     Graph generate(unsigned int n, unsigned int k) override {
         Graph g;
@@ -25,10 +25,10 @@ public:
         return g;
     }
 
-    Graph generate_with_positions(unsigned int n, unsigned int k, double width, double height) override {
+    Graph generate_with_positions(unsigned int n, unsigned int k, const cgtea_geometry::Point& loc, cgtea_geometry::Point size) override {
         Graph g = generate(n, k);
-        std::vector<cgtea_geometry::Point> pos1 = position_generators::circle(width, height, width/4, n);
-        std::vector<cgtea_geometry::Point> pos2 = position_generators::circle(width, height, width/2, n);
+        std::vector<cgtea_geometry::Point> pos1 = position_generators::circle(loc.x, loc.y, size.x/4, n);
+        std::vector<cgtea_geometry::Point> pos2 = position_generators::circle(loc.x, loc.y, size.x/2, n);
         pos1.insert(pos1.end(), pos2.begin(), pos2.end());
         int i = 0;
         for_each_v(g, [&](Ver v) {

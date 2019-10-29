@@ -32,6 +32,7 @@
 
 #include <QtWidgets/QWidget>
 #include <QtCharts/QChartGlobal>
+#include "cgtea/datatypes.h"
 
 QT_BEGIN_NAMESPACE
 class QComboBox;
@@ -56,6 +57,7 @@ class ThemeWidget: public QWidget
 public:
     explicit ThemeWidget(QWidget *parent = 0);
     ~ThemeWidget();
+    Graph currentGraph;
 
 private Q_SLOTS:
     void updateUI();

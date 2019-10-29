@@ -3,6 +3,8 @@
 
 #include <QPainter>
 #include <qwidget.h>
+#include "cgtea/datatypes.h"
+#include "cgteaqt.h"
 
 
 class MyQWidget: public QWidget {
@@ -15,13 +17,15 @@ public:
   }
 protected:
   void paintEvent(QPaintEvent *event) override {
-    QRectF rectangle(10.0, 20.0, 60.0, 60.0);
+    ((ThemeWidget*)parentWidget())->currentGraph;
+
+    QRectF rectangle(100.0, 100.0, 50.0, 50.0);
     QPainter painter(this);
     painter.setBrush(Qt::white);
     painter.setPen(Qt::black);
     painter.setRenderHint(QPainter::Antialiasing, true);
-    painter.drawEllipse(QPoint(100,100), 50, 50);
-    painter.drawText(QPoint(100,100),QString("test"));
+    painter.drawEllipse(rectangle);
+    painter.drawText(rectangle,Qt::AlignCenter,"text");
   }
 };
 

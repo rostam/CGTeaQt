@@ -10,7 +10,6 @@
 
 class MyQWidget: public QWidget {
 public:
-  GraphRelatedGatherer gg;
   MyQWidget() {
     QPalette pal = palette();
     pal.setColor(QPalette::Background, Qt::white);
@@ -21,10 +20,11 @@ protected:
   void paintEvent(QPaintEvent *event) override {
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing, true);
-    Graph currentGraph = gg.availableGenerators[0]->generate_with_positions(10,2,cgtea_geometry::Point(100,100),cgtea_geometry::Point(260,260));
+    GraphRelatedGatherer& gg = ((ThemeWidget*)parentWidget())->graphRelatedGatherer;
+    Graph currentGraph = gg.availableGenerators[0]->generate_with_positions(10,2,cgtea_geometry::Point(100,100),cgtea_geometry::Point(200,200));
     //    Graph& currentGraph = ((ThemeWidget*)parentWidget())->currentGraph;
 
-    int vertex_size = 20;
+    int vertex_size = 30;
     for_each_e_const(currentGraph, [&](Edge e) {
       painter.setBrush(Qt::black);
       painter.setPen(Qt::black);

@@ -2,6 +2,7 @@ QT += charts
 requires(qtConfig(combobox))
 
 HEADERS += \
+    CGTeaMainWindow.h \
     GraphRelatedGatherer.h \
     MyQWidget.h \
     cgtea/Eigen/Cholesky \

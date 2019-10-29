@@ -1,6 +1,8 @@
 #ifndef CGTEAMAINWINDOW_H
 #define CGTEAMAINWINDOW_H
 
+#include <QActionGroup>
+#include <QLabel>
 #include <QMainWindow>
 #include "cgteaqt.h"
 
@@ -10,17 +12,10 @@ class CGTeaMainWindow : public QMainWindow
 
   ThemeWidget *widget;
 public:
-  CGTeaMainWindow()
-  {
-    widget = new ThemeWidget();
-    setCentralWidget(widget);
-  }
+  CGTeaMainWindow();
 
-  void createMenus()
-  {
-    //    for(auto& gi : widget->graphRelatedGatherer.availableGenerators) {
-
-    //    }
-  }
+private:
+  void createActions();
+  void createMenus();
 };
 #endif // CGTEAMAINWINDOW_H

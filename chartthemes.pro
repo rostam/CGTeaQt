@@ -332,6 +332,7 @@ HEADERS += \
     cgteaqt.h
 
 SOURCES += \
+    CGTeaMainWindow.cpp \
     cgtea/generators/compute_force_directed.cpp \
     cgteaqt.cpp \
     main.cpp

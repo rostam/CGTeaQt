@@ -8,9 +8,9 @@
 #include "GraphRelatedGatherer.h"
 
 
-class MyQWidget: public QWidget {
+class G1Widget: public QWidget {
 public:
-  MyQWidget() {
+  G1Widget() {
     QPalette pal = palette();
     pal.setColor(QPalette::Background, Qt::white);
     setAutoFillBackground(true);
@@ -40,7 +40,7 @@ protected:
 
     for_each_v_const(currentGraph, [&](Ver v){
       int color =  boost::get(vertex_color, currentGraph,v);
-      tuple<int,int,int,int> t = gg.distinctColors[color+1];
+      tuple<int,int,int,int> t = gg.distinctColors[color];
       QColor qcolor(get<0>(t), get<1>(t), get<2>(t), get<3>(t));
       cgtea_geometry::Point pos = boost::get(boost::vertex_distance, currentGraph, v);
       QRectF rectangle(pos.x, pos.y, vertex_size, vertex_size);

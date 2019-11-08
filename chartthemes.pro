@@ -3,8 +3,8 @@ requires(qtConfig(combobox))
 
 HEADERS += \
     CGTeaMainWindow.h \
+    G1Widget.h \
     GraphRelatedGatherer.h \
-    MyQWidget.h \
     cgtea/Eigen/Cholesky \
     cgtea/Eigen/CholmodSupport \
     cgtea/Eigen/Core \

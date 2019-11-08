@@ -54,7 +54,7 @@
 #include <QtCharts/QBarCategoryAxis>
 #include <QtWidgets/QApplication>
 #include <QtCharts/QValueAxis>
-#include <MyQWidget.h>
+#include <G1Widget.h>
 
 ThemeWidget::ThemeWidget(QWidget *parent) :
     QWidget(parent),
@@ -83,7 +83,7 @@ ThemeWidget::ThemeWidget(QWidget *parent) :
 //    m_ui->gridLayout->addWidget(chartView, 1, 1);
 
 
-    m_ui->gridLayout->addWidget(new MyQWidget());
+    m_ui->gridLayout->addWidget(new G1Widget());
     m_charts << chartView;
 
     //![5]

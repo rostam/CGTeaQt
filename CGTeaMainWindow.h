@@ -17,5 +17,6 @@ public:
 private:
   void createActions();
   void createMenus();
+  void report(QAction* act);
 };
 #endif // CGTEAMAINWINDOW_H

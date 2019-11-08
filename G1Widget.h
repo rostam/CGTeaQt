@@ -4,12 +4,13 @@
 #include <QPainter>
 #include <qwidget.h>
 #include "cgtea/datatypes.h"
-#include "cgteaqt.h"
 #include "GraphRelatedGatherer.h"
-
+#include "DistinctColors.h"
 
 class G1Widget: public QWidget {
 public:
+  DistinctColors dc;
+  Graph currentGraph;
   G1Widget() {
     QPalette pal = palette();
     pal.setColor(QPalette::Background, Qt::white);
@@ -20,9 +21,9 @@ protected:
   void paintEvent(QPaintEvent *event) override {
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing, true);
-    GraphRelatedGatherer& gg = ((ThemeWidget*)parentWidget())->graphRelatedGatherer;
-    Graph currentGraph = gg.availableGenerators[0]->generate_with_positions(10,2,cgtea_geometry::Point(100,100),cgtea_geometry::Point(200,200));
-    //    Graph& currentGraph = ((ThemeWidget*)parentWidget())->currentGraph;
+//    GraphRelatedGatherer& gg = ((ThemeWidget*)parentWidget())->graphRelatedGatherer;
+    //    Graph currentGraph = gg.availableGenerators[0]->generate_with_positions(10,2,cgtea_geometry::Point(100,100),cgtea_geometry::Point(200,200));
+//    Graph& currentGraph = ((ThemeWidget*)parentWidget())->currentGraph;
 
     int vertex_size = 30;
     for_each_e_const(currentGraph, [&](Edge e) {
@@ -40,7 +41,7 @@ protected:
 
     for_each_v_const(currentGraph, [&](Ver v){
       int color =  boost::get(vertex_color, currentGraph,v);
-      tuple<int,int,int,int> t = gg.distinctColors[color];
+      tuple<int,int,int,int> t = dc.distinctColors[color];
       QColor qcolor(get<0>(t), get<1>(t), get<2>(t), get<3>(t));
       cgtea_geometry::Point pos = boost::get(boost::vertex_distance, currentGraph, v);
       QRectF rectangle(pos.x, pos.y, vertex_size, vertex_size);

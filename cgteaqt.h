@@ -34,6 +34,7 @@
 #include <QtCharts/QChartGlobal>
 #include "cgtea/datatypes.h"
 #include "GraphRelatedGatherer.h"
+#include "G1Widget.h"
 
 QT_BEGIN_NAMESPACE
 class QComboBox;
@@ -58,8 +59,10 @@ class ThemeWidget: public QWidget
 public:
     explicit ThemeWidget(QWidget *parent = 0);
     ~ThemeWidget();
-    Graph currentGraph;
     GraphRelatedGatherer graphRelatedGatherer;
+
+    void updateG1View(const Graph& g);
+
 private Q_SLOTS:
     void updateUI();
 
@@ -75,6 +78,8 @@ private:
     QChart *createLineChart() const;
     QChart *createSplineChart() const;
     QChart *createScatterChart() const;
+
+    G1Widget *G1View;
 
 private:
     int m_listCount;

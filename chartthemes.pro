@@ -3,6 +3,7 @@ requires(qtConfig(combobox))
 
 HEADERS += \
     CGTeaMainWindow.h \
+    DistinctColors.h \
     G1Widget.h \
     GraphRelatedGatherer.h \
     cgtea/Eigen/Cholesky \

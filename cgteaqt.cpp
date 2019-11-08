@@ -83,7 +83,8 @@ ThemeWidget::ThemeWidget(QWidget *parent) :
 //    m_ui->gridLayout->addWidget(chartView, 1, 1);
 
 
-    m_ui->gridLayout->addWidget(new G1Widget());
+    G1View = new G1Widget();
+    m_ui->gridLayout->addWidget(G1View);
     m_charts << chartView;
 
     //![5]
@@ -423,5 +424,10 @@ void ThemeWidget::updateUI()
         }
     }
     //![10]
+}
+
+void ThemeWidget::updateG1View(const Graph& g) {
+  G1View->currentGraph = g;
+  G1View->update();
 }
 

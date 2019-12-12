@@ -62,6 +62,7 @@ public:
     GraphRelatedGatherer graphRelatedGatherer;
 
     void updateG1View(const Graph& g);
+    void updateG2View(const Graph& g);
 
 private Q_SLOTS:
     void updateUI();
@@ -79,7 +80,8 @@ private:
     QChart *createSplineChart() const;
     QChart *createScatterChart() const;
 
-    G1Widget *G1View;
+    GWidget *G1View;
+    GWidget *G2View;
 
 private:
     int m_listCount;

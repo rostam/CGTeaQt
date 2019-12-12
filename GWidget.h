@@ -7,11 +7,11 @@
 #include "GraphRelatedGatherer.h"
 #include "DistinctColors.h"
 
-class G1Widget: public QWidget {
+class GWidget: public QWidget {
 public:
   DistinctColors dc;
   Graph currentGraph;
-  G1Widget() {
+  GWidget() {
     QPalette pal = palette();
     pal.setColor(QPalette::Background, Qt::white);
     setAutoFillBackground(true);

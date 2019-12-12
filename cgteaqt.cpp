@@ -73,9 +73,11 @@ ThemeWidget::ThemeWidget(QWidget *parent) :
 
     QChartView *chartView;
 
-    chartView = new QChartView(createAreaChart());
-    m_ui->gridLayout->addWidget(chartView, 1, 0);
-    m_charts << chartView;
+
+
+//    chartView = new QChartView(createAreaChart());
+//    m_ui->gridLayout->addWidget(chartView, 1, 0);
+//    m_charts << chartView;
 
     chartView = new QChartView(createPieChart());
     // Funny things happen if the pie slice labels do not fit the screen, so we ignore size policy
@@ -83,9 +85,14 @@ ThemeWidget::ThemeWidget(QWidget *parent) :
 //    m_ui->gridLayout->addWidget(chartView, 1, 1);
 
 
-    G1View = new G1Widget();
+    G2View = new GWidget();
+    m_ui->gridLayout->addWidget(G2View);
+    m_charts << chartView;
+
+    G1View = new GWidget();
     m_ui->gridLayout->addWidget(G1View);
     m_charts << chartView;
+
 
     //![5]
     chartView = new QChartView(createLineChart());
@@ -429,5 +436,10 @@ void ThemeWidget::updateUI()
 void ThemeWidget::updateG1View(const Graph& g) {
   G1View->currentGraph = g;
   G1View->update();
+}
+
+void ThemeWidget::updateG2View(const Graph& g) {
+  G2View->currentGraph = g;
+  G2View->update();
 }
 

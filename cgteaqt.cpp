@@ -54,7 +54,7 @@
 #include <QtCharts/QBarCategoryAxis>
 #include <QtWidgets/QApplication>
 #include <QtCharts/QValueAxis>
-#include <G1Widget.h>
+#include <GWidget.h>
 
 ThemeWidget::ThemeWidget(QWidget *parent) :
     QWidget(parent),

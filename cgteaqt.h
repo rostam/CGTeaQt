@@ -34,7 +34,7 @@
 #include <QtCharts/QChartGlobal>
 #include "cgtea/datatypes.h"
 #include "GraphRelatedGatherer.h"
-#include "G1Widget.h"
+#include "GWidget.h"
 
 QT_BEGIN_NAMESPACE
 class QComboBox;

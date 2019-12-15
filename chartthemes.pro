@@ -330,7 +330,8 @@ HEADERS += \
     cgtea/reports/NumOfVertices.h \
     cgtea/reports/ReportInterface.h \
     cgtea/reports/SumEigenValues.h \
-    cgteaqt.h
+    cgteaqt.h \
+    ui_cgteaqt.h
 
 SOURCES += \
     CGTeaMainWindow.cpp \

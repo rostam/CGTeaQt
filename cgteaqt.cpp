@@ -28,7 +28,7 @@
 ****************************************************************************/
 
 #include "cgteaqt.h"
-#include "ui_themewidget.h"
+#include "ui_cgteaqt.h"
 
 #include <QtCharts/QChartView>
 #include <QtCharts/QPieSeries>

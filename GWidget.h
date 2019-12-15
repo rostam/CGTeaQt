@@ -11,6 +11,7 @@ class GWidget: public QWidget {
 public:
   DistinctColors dc;
   Graph currentGraph;
+  string currentSelectedGraphView = "G1";
   GWidget() {
     QPalette pal = palette();
     pal.setColor(QPalette::Background, Qt::white);

@@ -47,11 +47,16 @@ void CGTeaMainWindow::createMenus()
 }
 
 void CGTeaMainWindow::generate(QAction* act) {
+//  themeComboBox
+//  widget->m_ui->
   auto& rs = widget->graphRelatedGatherer.availableGenerators;
   auto name = act->data().toString().toStdString();
   auto el = std::find_if(rs.begin(), rs.end(),[&name](const auto& x) {return x->name().compare(name)==0;});
   if(el != rs.end()) {
-     widget->updateG1View( (*el)->generate_with_positions(10, 2, cgtea_geometry::Point(100,100), cgtea_geometry::Point(200,200)));
+      if(widget->whichGraphIsSelected() == "G1")
+        widget->updateG1View( (*el)->generate_with_positions(10, 2, cgtea_geometry::Point(100,100), cgtea_geometry::Point(200,200)));
+      else
+        widget->updateG2View( (*el)->generate_with_positions(10, 2, cgtea_geometry::Point(100,100), cgtea_geometry::Point(200,200)));
   }
 }
 

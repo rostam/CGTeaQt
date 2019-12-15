@@ -64,6 +64,7 @@ public:
     void updateG1View(const Graph& g);
     void updateG2View(const Graph& g);
 
+    string whichGraphIsSelected();
 private Q_SLOTS:
     void updateUI();
 
@@ -89,8 +90,8 @@ private:
     int m_valueCount;
     QList<QChartView *> m_charts;
     DataTable m_dataTable;
-
     Ui_ThemeWidgetForm *m_ui;
+
 };
 
 #endif /* THEMEWIDGET_H */

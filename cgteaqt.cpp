@@ -85,12 +85,12 @@ ThemeWidget::ThemeWidget(QWidget *parent) :
 //    m_ui->gridLayout->addWidget(chartView, 1, 1);
 
 
-    G2View = new GWidget();
-    m_ui->gridLayout->addWidget(G2View);
-    m_charts << chartView;
-
     G1View = new GWidget();
     m_ui->gridLayout->addWidget(G1View);
+    m_charts << chartView;
+
+    G2View = new GWidget();
+    m_ui->gridLayout->addWidget(G2View);
     m_charts << chartView;
 
 
@@ -153,14 +153,14 @@ DataTable ThemeWidget::generateRandomData(int listCount, int valueMax, int value
 void ThemeWidget::populateThemeBox()
 {
     // add items to theme combobox
-    m_ui->themeComboBox->addItem("Light", QChart::ChartThemeLight);
-    m_ui->themeComboBox->addItem("Blue Cerulean", QChart::ChartThemeBlueCerulean);
-    m_ui->themeComboBox->addItem("Dark", QChart::ChartThemeDark);
-    m_ui->themeComboBox->addItem("Brown Sand", QChart::ChartThemeBrownSand);
-    m_ui->themeComboBox->addItem("Blue NCS", QChart::ChartThemeBlueNcs);
-    m_ui->themeComboBox->addItem("High Contrast", QChart::ChartThemeHighContrast);
-    m_ui->themeComboBox->addItem("Blue Icy", QChart::ChartThemeBlueIcy);
-    m_ui->themeComboBox->addItem("Qt", QChart::ChartThemeQt);
+    m_ui->themeComboBox->addItem("G1", "G1");
+    m_ui->themeComboBox->addItem("G2", "G2");
+//    m_ui->themeComboBox->addItem("Dark", QChart::ChartThemeDark);
+//    m_ui->themeComboBox->addItem("Brown Sand", QChart::ChartThemeBrownSand);
+//    m_ui->themeComboBox->addItem("Blue NCS", QChart::ChartThemeBlueNcs);
+//    m_ui->themeComboBox->addItem("High Contrast", QChart::ChartThemeHighContrast);
+//    m_ui->themeComboBox->addItem("Blue Icy", QChart::ChartThemeBlueIcy);
+//    m_ui->themeComboBox->addItem("Qt", QChart::ChartThemeQt);
 }
 
 void ThemeWidget::populateAnimationBox()
@@ -431,6 +431,10 @@ void ThemeWidget::updateUI()
         }
     }
     //![10]
+}
+
+string ThemeWidget::whichGraphIsSelected() {
+  return m_ui->themeComboBox->itemData(m_ui->themeComboBox->currentIndex()).toString().toStdString();
 }
 
 void ThemeWidget::updateG1View(const Graph& g) {

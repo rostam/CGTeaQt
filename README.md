@@ -1,3 +1,2 @@
 # CGTeaQt
-A Qt version of CGTea (https://github.com/rostam/CGTea).
-Basically, the only difference to CGTea is the view that is based on Qt here. 
+A Qt version of CGTea (https://github.com/rostam/CGTea) extended to draw more graphs in the same view which helps to visalize graph operations. 

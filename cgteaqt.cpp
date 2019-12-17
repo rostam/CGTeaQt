@@ -431,6 +431,10 @@ void ThemeWidget::updateUI()
     //![10]
 }
 
+string ThemeWidget::whichOperationIsSelected() {
+  return m_ui->animatedComboBox->itemData(m_ui->animatedComboBox->currentIndex()).toString().toStdString();
+}
+
 string ThemeWidget::whichGraphIsSelected() {
   return m_ui->themeComboBox->itemData(m_ui->themeComboBox->currentIndex()).toString().toStdString();
 }

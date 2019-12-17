@@ -20,5 +20,6 @@ private:
   void report(QAction* act);
   void generate(QAction* act);
   void action(QAction* act);
+  void binaryOperation(QAction* act);
 };
 #endif // CGTEAMAINWINDOW_H

@@ -310,6 +310,8 @@ HEADERS += \
     cgtea/G6Format/G6Format.h \
     cgtea/actions/ActionInterface.h \
     cgtea/actions/Coloring.h \
+    cgtea/binaryoperations/BinaryOperationInterface.h \
+    cgtea/binaryoperations/union.h \
     cgtea/datatypes.h \
     cgtea/generators/Antiprism.h \
     cgtea/generators/Banana.h \

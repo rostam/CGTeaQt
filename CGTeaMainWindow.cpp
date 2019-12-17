@@ -44,6 +44,17 @@ void CGTeaMainWindow::createMenus()
       //  connect(newAct, &QAction::triggered, this, &MainWindow::newFile);
     }
   connect(actionMenu, &QMenu::triggered, this, &CGTeaMainWindow::action);
+
+  auto binaryOperationMenu = menuBar()->addMenu(tr("&Binary Operations"));
+  for(auto& g : widget->graphRelatedGatherer.availableActions) {
+      auto newAct = new QAction(tr((string("&")+g->name()).c_str()), this);
+      newAct->setData(QString::fromStdString(g->name()));
+      //      newAct->setShortcuts(QKeySequence::New);
+      newAct->setStatusTip(tr(g->description().c_str()));
+      binaryOperationMenu->addAction(newAct);
+      //  connect(newAct, &QAction::triggered, this, &MainWindow::newFile);
+    }
+  connect(binaryOperationMenu, &QMenu::triggered, this, &CGTeaMainWindow::binaryOperation);
 }
 
 void CGTeaMainWindow::generate(QAction* act) {
@@ -73,3 +84,9 @@ void CGTeaMainWindow::report(QAction* act) {
 void CGTeaMainWindow::action(QAction* act) {
 
 }
+
+void CGTeaMainWindow::binaryOperation(QAction* act) {
+
+}
+
+

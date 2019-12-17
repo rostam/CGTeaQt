@@ -65,6 +65,7 @@ public:
     void updateG2View(const Graph& g);
 
     string whichGraphIsSelected();
+    string whichOperationIsSelected();
 private Q_SLOTS:
     void updateUI();
 

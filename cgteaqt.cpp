@@ -166,10 +166,8 @@ void ThemeWidget::populateThemeBox()
 void ThemeWidget::populateAnimationBox()
 {
     // add items to animation combobox
-    m_ui->animatedComboBox->addItem("No Animations", QChart::NoAnimation);
-    m_ui->animatedComboBox->addItem("GridAxis Animations", QChart::GridAxisAnimations);
-    m_ui->animatedComboBox->addItem("Series Animations", QChart::SeriesAnimations);
-    m_ui->animatedComboBox->addItem("All Animations", QChart::AllAnimations);
+    m_ui->animatedComboBox->addItem("Union", "Union");
+    m_ui->animatedComboBox->addItem("Cartesion Product", "Cartesion Product");
 }
 
 void ThemeWidget::populateLegendBox()

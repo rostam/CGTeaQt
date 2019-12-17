@@ -46,7 +46,7 @@ void CGTeaMainWindow::createMenus()
   connect(actionMenu, &QMenu::triggered, this, &CGTeaMainWindow::action);
 
   auto binaryOperationMenu = menuBar()->addMenu(tr("&Binary Operations"));
-  for(auto& g : widget->graphRelatedGatherer.availableActions) {
+  for(auto& g : widget->graphRelatedGatherer.availableBinaryOperations) {
       auto newAct = new QAction(tr((string("&")+g->name()).c_str()), this);
       newAct->setData(QString::fromStdString(g->name()));
       //      newAct->setShortcuts(QKeySequence::New);
@@ -82,7 +82,12 @@ void CGTeaMainWindow::report(QAction* act) {
 }
 
 void CGTeaMainWindow::action(QAction* act) {
+  auto& rs = widget->graphRelatedGatherer.availableReports;
+  auto name = act->data().toString().toStdString();
+  auto el = std::find_if(rs.begin(), rs.end(),[&name](const auto& x) {return x->name().compare(name)==0;});
+  if(el != rs.end()) {
 
+  }
 }
 
 void CGTeaMainWindow::binaryOperation(QAction* act) {

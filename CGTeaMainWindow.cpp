@@ -91,7 +91,12 @@ void CGTeaMainWindow::action(QAction* act) {
 }
 
 void CGTeaMainWindow::binaryOperation(QAction* act) {
-
+  auto& rs = widget->graphRelatedGatherer.availableBinaryOperations;
+  auto name = act->data().toString().toStdString();
+  auto el = std::find_if(rs.begin(), rs.end(),[&name](const auto& x) {return x->name().compare(name)==0;});
+  if(el != rs.end()) {
+    widget->updateG1View((*el)->operate(widget->getG1(), widget->getG2()));
+  }
 }
 
 

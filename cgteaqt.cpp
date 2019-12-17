@@ -449,3 +449,11 @@ void ThemeWidget::updateG2View(const Graph& g) {
   G2View->update();
 }
 
+Graph ThemeWidget::getG1() {
+  return G1View->currentGraph;
+}
+
+Graph ThemeWidget::getG2() {
+  return G2View->currentGraph;
+}
+

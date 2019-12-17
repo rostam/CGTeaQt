@@ -64,6 +64,9 @@ public:
     void updateG1View(const Graph& g);
     void updateG2View(const Graph& g);
 
+    Graph getG1();
+    Graph getG2();
+
     string whichGraphIsSelected();
     string whichOperationIsSelected();
 private Q_SLOTS:

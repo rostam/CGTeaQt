@@ -1,0 +1,3 @@
+[submodule "CGTea"]
+	path = CGTea
+	url = https://github.com/rostam/CGTea
